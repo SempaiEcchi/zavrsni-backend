@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio File Upload</title>
+
+</head>
+<body>
+
+<form id="audioUploadForm" enctype="multipart/form-data">
+  <label for="audioFile">Select Audio File:</label>
+  <input type="file" id="audioFile" name="file" accept="audio/*" required>
+
+  <br>
+  <input type="submit" value="Upload and Process">
+
+</form>
+<br>
+<span id="result"></span>
+
+<script>
+  document.getElementById("audioUploadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var formData = new FormData(this);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "/video-parser/process", true);
+
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        var responseMessage = document.getElementById("responseMessage");
+
+        responseMessage.innerHTML = xhr.responseText.toString();
+
+        //json type
+        var newTab = window.open();
+        //as json
+        newTab.document.write(xhr.responseText.toString());
+        // Successful response, handle accordingly
+        console.log("Audio file successfully uploaded and processed.");
+      } else {
+        // Error handling
+        console.error("Error uploading and processing audio file.");
+      }
+    };
+
+    xhr.onerror = function() {
+      // Network error
+      console.error("Network error during audio file upload and processing.");
+    };
+
+    xhr.send(formData);
+  });
+</script>
+
+</body>
+</html>

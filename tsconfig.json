@@ -1,0 +1,33 @@
+{
+  "ts-node": {
+    "esm": true
+  },
+  "compilerOptions": {
+    "module": "nodenext",
+    "declaration": true,
+    "moduleResolution": "nodenext",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@entities": [
+        "app/src/models/index.ts"
+      ]
+    },
+    "jsx": "react"
+  }
+}

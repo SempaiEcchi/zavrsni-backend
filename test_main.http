@@ -1,0 +1,41 @@
+### POST Create User
+POST http://127.0.0.1:3000/user/student
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth}}
+
+{ "first_name":"Leo", "last_name":"Messi", "email":"leo.radocaj@unipu.hr", "email_contact": "leo.radocaj@unipu.hr" }
+
+
+### POST Create CV
+POST http://127.0.0.1:3000/user/student/cv
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth}}
+
+
+
+#### POST Create Company
+#POST http://127.0.0.1:3000/user/company
+#Accept: application/json
+#Content-Type: application/json
+#Authorization: Bearer {{auth}}
+#
+#{
+#  "name": "Dposlovi",
+#  "location": "Pula",
+#  "logoUrl": "http://placekitten.com/200/300"
+#}
+
+
+
+#### GET request with parameter
+#GET http://127.0.0.1:3000/
+#Accept: application/json
+#Authorization: Bearer {{auth}}
+#
+#### GET request with parameter
+#GET http://127.0.0.1:3000/user/1
+#Accept: application/json
+#Authorization: Bearer {{auth}}
+
